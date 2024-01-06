@@ -3,7 +3,7 @@ from . import models
 
 class UserForm(forms.ModelForm):
     class Meta:
-        model = usuario
+        model = models.usuario
 
         widgets = {
             'password': forms.PasswordInput(),
