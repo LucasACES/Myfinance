@@ -1,11 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends 'html/base.html' %}
+
+{%block title%}Bancos{%endblock%}
+
+{%block content%}
+
+    <div id ="section1">
+
+            <div class="bancos row">
+                {% for bank in banco%}
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-body col">
+                        <h5 class="card-title">{{bank.nome}}</h5>
+                        <p class="card-text">R${{bank.saldo}}</p>
+                        <a href="/bank/{{bank.nome}}" class="card-link">Editar</a>
+                        <a href="#" class="card-link">Apagar</a>
+                        </div>
+                    </div>
+                {%endfor%}
+            </div>
+    </div>
+
+{%endblock%}

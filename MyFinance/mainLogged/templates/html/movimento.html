@@ -1,0 +1,31 @@
+{% extends 'html/base.html'%}
+
+{%block title%}Movimentos{%endblock%}
+
+{%block content%}
+<div id ="section1">
+    <h2> Tabela de movimentação:</h2>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Tipo:</th>
+            <th scope="col">Banco:</th>
+            <th scope="col">Valor:</th>
+            <th scope="col">Descrição:</th>
+            <th scope="col">Data:</th>
+          </tr>
+        </thead>
+        <tbody>
+            {%for i in movi %}
+          <tr>
+            <th scope="row">{{ i.movimento}}</th>
+            <td>{{i.banco}}</td>
+            <td> {{i.valor}} </td>
+            <td> {{i.descricao}} </td>
+            <td> {{i.date}} </td>
+          </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+</div>
+{%endblock%}

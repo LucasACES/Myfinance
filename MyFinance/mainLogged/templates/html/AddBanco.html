@@ -1,0 +1,16 @@
+{% extends 'html/base.html' %}
+
+{%block title%}Novo Banco{%endblock%}
+
+{%block content%}
+<div id ="section1">
+    <div class="form-bank">
+        <form class="bank-form" action="/newbank" method="post">
+            {% csrf_token %}
+            {{form}}
+
+            <input type="submit" value="Adicionar">
+        </form>
+    </div>
+</div>
+{%endblock%}

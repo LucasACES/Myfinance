@@ -20,7 +20,12 @@ from main import views
 from mainLogged import views as viewsLogged
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin', admin.site.urls),
     path('', views.home),
-    path('home', viewsLogged.homeLogged)
+    path('home', viewsLogged.homeLogged),
+    path('bank', viewsLogged.bankLogged),
+    # path('bank/<str:nome>', viewsLogged.updateBank),
+    path('movimentation', viewsLogged.moviLogged),
+    path('newbank', viewsLogged.addBank),
+    path('newmoviment', viewsLogged.addMoviment)
 ]

@@ -1,75 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+{% extends "html\base.html" %}
 
-    <title>MyFinance</title>
+    {% block title %}Home{% endblock %}
 
-    <style>
-      body {
-        position: relative; 
-      }
-      #section1 {padding-top:70px;height:500px;}
-      </style>
-
-
-</head>
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="/">MyFinance</a>
-          </div>
-          <ul class="nav navbar-nav">
-            <li><a href="/home">Home</a></li>
-            <li><a href="/bank">Bancos</a></li>
-            <li><a href="/movimentation">Movimentação</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-          </ul>
+      {%block content%}
+      <div id='section1'>
+        <div>
+          <a class="btn btn-outline-success" href="/newmoviment" role="button">Adicionar Entrada</a>
+          <a class="btn btn-outline-danger" href="/newmoviment" role="button">Adicionar Saída</a>
         </div>
-      </nav>
+        <br>
+        <div class='row'>
+          <div class='col'>
+            <div class="card" style="width: 15rem;">
+              <div class="card-body">
+                <h5 class="card-title">Saldo</h5>
+                <p class="card-text">R$ {{saldo}}</p>
+              </div>
+            </div>
+          </div>
+        
+          <div class='col'>
+            <div class="card" style="width: 15rem;">
+              <div class="card-body">
+                <h5 class="card-title">Investimento</h5>
+                <p class="card-text">R$ {{saldo}}</p>
+              </div>
+            </div>
+          </div>
 
-      <div id ="section1" class="container-fluid">
-        <div class="row">
-          <div class="col-sm-3">
-            <div class="panel panel-info">
-              <div class="panel-heading"> <div class="glyphicon glyphicon-usd"></div> <strong>Saldo</strong></div>
-              <div class="panel-body text-center">R$ 1.000,00</div>
+          <div class='col'>
+            <div class="card" style="width: 15rem;">
+              <div class="card-body">
+                <h5 class="card-title">Entrada</h5>
+                <p class="card-text">R$ {{saldo}}</p>
+              </div>
             </div>
           </div>
-          <div class="col-sm-3">
-            <div class="panel panel-info">
-              <div class="panel-heading"> <div class="glyphicon glyphicon-piggy-bank"></div> <strong>Investimento</strong></div>
-              <div class="panel-body text-center">R$ 1.000,00</div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="panel panel-success">
-              <div class="panel-heading "><div class="glyphicon glyphicon-arrow-up"></div> <strong>Receita</strong></div>
-              <div class="panel-body text-center">R$ 1.000,00</div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="panel panel-danger">
-              <div class="panel-heading"><div class="glyphicon glyphicon-arrow-down"></div> <strong>Despesa</strong></div>
-              <div class="panel-body text-center">R$ 1.000,00</div>
+
+          <div class='col'>
+            <div class="card" style="width: 15rem;">
+              <div class="card-body">
+                <h5 class="card-title">Saída</h5>
+                <p class="card-text">R$ {{saldo}}</p>
+              </div>
             </div>
           </div>
         </div>
-
       </div>
-    
+      {% endblock %}
 </body>
-
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</html>
